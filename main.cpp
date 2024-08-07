@@ -17,14 +17,19 @@ using namespace std;
 #define imin INT_MIN
 #define exp 1e9
 #define sz(x) (int((x).size()))
+#define vpii vector<pair<int, int>>
 
 int32_t main()
 {
-    int ttt;
-    cin >> ttt;
-    while (ttt--)
+    int t, n, tmp;
+    ll a, b, c, d;
+    cin >> t;
+    string s;
+
+    while (t--)
     {
-        cout << "Hello";
+        cin >> c >> d;
+        cin >> a >> b;
+        cout << min(a * abs(d - c) + b * min(d, c), a * (c + d)) << endl;
     }
-    return 0;
 }
