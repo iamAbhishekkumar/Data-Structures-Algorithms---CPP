@@ -1,7 +1,3 @@
-# Daily Question:
+# Important Algorithms 
 
-> Day 1 :  Greedy - CF - 1000
-
-* [Dragons](https://codeforces.com/problemset/problem/230/A)  
-* [Move Brackets](https://codeforces.com/problemset/problem/1374/C) 
-* [Road To Zero](https://codeforces.com/problemset/problem/1342/A) 
+[reference](https://www.geeksforgeeks.org/top-algorithms-and-data-structures-for-competitive-programming/)
