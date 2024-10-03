@@ -28,6 +28,7 @@ using namespace std;
 // it may contain duplicate pairs
 // NOTE : WILL HAVE DUPLICATE PAIRS, BUT INDEX are different.
 // CAN USE TWO POINTERS, but it may or may not contain duplicate pairs.
+// In here we have hashmap because we need index as part our answer, we can set also.
 void twoSumSol(vi &v, int target, vpii &ansIndex)
 {
     unordered_map<int, int> m;
@@ -57,14 +58,14 @@ void twoSumUniquePair(vi &v, int target, vpii &ans)
         if (sum == target)
         {
             ans.push_back({left, right});
+            ++left;
+            --right;
 
-            while (left < right && v[left] == v[left + 1])
+            while (left < right && v[left] == v[left - 1])
                 ++left;
 
             while (left < right && v[right] == v[right + 1])
                 --right;
-            ++left;
-            --right;
         }
         else if (sum > target)
             --right;

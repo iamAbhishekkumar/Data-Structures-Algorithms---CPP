@@ -54,6 +54,43 @@ vector<vector<int>> threeSum(vi &v, int target)
 // O(n2) , O(1) space
 vector<vector<int>> threeSum2(vi &v, int target)
 {
+    vector<vector<int>> ans;
+    sort(v.begin(), v.end());
+    int left, right, sum;
+    for (int i = 0; i < v.size(); i++)
+    {
+        if (i > 0 && v[i] == v[i - 1])
+        { // this step to remove duplicate i values
+            continue;
+        }
+        int new_tar = target - v[i];
+        left = i + 1;
+        right = v.size() - 1;
+        while (left < right)
+        {
+            sum = v[left] + v[right];
+            if (sum == new_tar)
+            {
+                vector<int> res({v[i], v[left], v[right]});
+                ans.push_back(res);
+                ++left;
+                --right;
+
+                // this is for getting RIGHTMOST value in duplicates of v[left]
+                while (left < right && v[left] == v[left - 1])
+                    ++left;
+
+                // this is for getting LEFTMOST value in duplicates of v[right]
+                while (left < right && v[right] == v[right + 1])
+                    --right;
+            }
+            else if (sum > new_tar)
+                --right;
+            else
+                ++left;
+        }
+    }
+    return ans;
 }
 
 int32_t main()
@@ -63,7 +100,7 @@ int32_t main()
     int t = 11;
     // twoSumSol1(v, t, ans);
     vector<vector<int>> ans;
-    ans = threeSum(v, t);
+    ans = threeSum2(v, t);
     for (auto k : ans)
 
     {
