@@ -6,8 +6,6 @@ using namespace std;
 #define pb push_back
 #define mk make_pair
 #define pii pair<int, int>
-#define a first
-#define b second
 #define vi vector<int>
 #define vl vector<long long int>
 #define all(x) (x).begin(), (x).end()
@@ -21,16 +19,21 @@ using namespace std;
 #define vpii vector<pair<int, int>>
 #define piv pair<int, vector<int>>
 
-int32_t main()
-{
-    ll n, m, k;
-    cin >> n >> m >> k;
-    ll sum = 0, tmp;
-    while (n--)
-    {
-        cin >> tmp;
-        sum += tmp;
+int32_t main() {
+    int n, s, t;
+    cin >> n >> s >> t;
+    pair<int, int> p1, p2;
+    int a, b, c, d;
+    vector<pair<pair<int, int>, pair<int, int>>> v;
+    while (n) {
+        cin >> a >> b >> c >> d;
+        v.push_back({{a, b}, {c, d}});
+        --n;
     }
-    cout << k - sum << endl;
-    cout << 81 + 79;
+    sort(v.begin(), v.end());
+
+    for (auto i : v) {
+        cout << i.first.first << ", " << i.first.second << " -> ";
+        cout << i.second.first << ", " << i.second.second << endl;
+    }
 }

@@ -1,8 +1,3 @@
-// longest subarray with given sum (positive + negatives)
-
-// Length of the longest subarray with zero Sum also print the array
-// longest subarray whose sum is divible by k
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -27,19 +22,13 @@ using namespace std;
 #define printvi(v) \
     for (int i : v) cout << i << " ";
 
-// count subarray with given sum
-int countSubarrayWithSumK(vector<int>& arr, int tar) {
-    unordered_map<int, int> m;
-    m[0] = 1;
-    int ans = 0;
-    int ps = 0;
-    for (int i : arr) {
-        ps += i;
-        if (m.find(ps - tar) != m.end()) {
-            ans += m[ps - tar];
-        }
-        ++m[ps];
-    }
-    return ans;
+int main() {
+    vector<vector<char>> M = {{'1', '1', '0', '0', '0'},
+                              {'0', '1', '0', '0', '1'},
+                              {'1', '0', '0', '1', '1'},
+                              {'0', '0', '0', '0', '0'},
+                              {'1', '0', '1', '1', '0'}};
+
+    // cout << countIslands(M) << endl;
+    return 0;
 }
-int32_t main() {}
